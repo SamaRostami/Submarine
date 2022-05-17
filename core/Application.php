@@ -1,17 +1,21 @@
 <?php
 
-namespace app\core;
+namespace App\core;
+
+use JetBrains\PhpStorm\Pure;
 
 class Application
 {
     public Router $router;
-    public function __construct()
+    public Request $request;
+    #[Pure] public function __construct()
     {
-        $this->router = new Router();
+        $this->request = new Request();
+        $this->router = new Router($this->request);
     }
 
     public function run()
     {
-
+        $this->router->resolve();
     }
 }

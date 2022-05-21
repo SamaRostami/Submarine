@@ -12,11 +12,13 @@ class AuthController extends Controller
         if ($request->isPost()) {
             return 'Handling submitted data ';
         }
+        $this->setLayout('auth');
         return $this->render('register');
     }
 
     public function login(Request $request)
     {
+        $this->setLayout('auth');
         return $this->render('login');
     }
 }

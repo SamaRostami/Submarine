@@ -10,6 +10,7 @@ class Router
 
     /**
      * @param Request $request
+     * @param Response $response
      */
     public function __construct(Request $request, Response $response)
     {
